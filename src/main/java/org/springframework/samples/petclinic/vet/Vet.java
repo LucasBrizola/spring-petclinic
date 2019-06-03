@@ -76,5 +76,4 @@ public class Vet extends Person {
         getSpecialtiesInternal().add(specialty);
     }
 
-    this line will make the code break
 }
