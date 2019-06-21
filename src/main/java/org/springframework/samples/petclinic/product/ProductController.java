@@ -13,27 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.springframework.samples.petclinic.product;
 
-package org.springframework.samples.petclinic;
+import java.util.Collection;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.samples.petclinic.vet.VetRepository;
-import org.springframework.test.context.junit4.SpringRunner;
+@Controller
+class ProductController {
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class PetclinicIntegrationTests {
+	private ProductRepository products;
 
-    @Autowired
-    private VetRepository vets;
+	public ProductController(ProductRepository products) {
+		super();
+		this.products = products;
+	}
 
-    @Test
-    public void testFindAll() throws Exception {
-        vets.findAll();
-        vets.findAll(); // served from cache
-    }
+	@GetMapping("/products")
+	public String processFindForm(Model model) {
+		Collection<Product> productsList = products.findAll();	
+		model.addAttribute("products", productsList);
+		return "products/productsList";
+	}
 }

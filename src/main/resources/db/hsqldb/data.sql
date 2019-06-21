@@ -51,3 +51,6 @@ INSERT INTO visits VALUES (1, 7, '2013-01-01', 'rabies shot');
 INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'neutered');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'spayed');
+
+INSERT INTO products VALUES (1, 'Golden gato adulto salmão 1kg', 'comida para gatos adultos sabor salmão');
+INSERT INTO products VALUES (2, 'Frango Sonoro Vinil', 'brinquedo favorito de cães e gatos, oferece sinais sonoros ao ser apertado');
